@@ -11,6 +11,11 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('wapi')->group(function (){
+    require __DIR__.'/wapi.php';
 });
