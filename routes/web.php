@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::prefix('wapi')->group(function (){
     require __DIR__.'/wapi.php';
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
