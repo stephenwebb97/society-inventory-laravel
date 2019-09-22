@@ -8,18 +8,26 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify);
+
+import "vuetify/dist/vuetify.min.css";
+
+import "@mdi/font/css/materialdesignicons.css"
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
  * components and automatically register them with their "basename".
  *
- * Eg. ./components/LookUp.vue -> <example-component></example-component>
+ * Eg. ./components/LookUpBoardGames.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+const files = require.context('./', true, /\.vue$/i);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('look-up-component', require('./components/LookUp.vue').default);
+// Vue.component('look-up-boardgames', require('./components/LookUpBoardGames.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,6 +35,11 @@ Vue.component('look-up-component', require('./components/LookUp.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+const vuetify = new Vuetify({icons: {
+        iconfont: 'mdi', // default - only for display purposes
+    },});
+
 const app = new Vue({
+    vuetify,
     el: '#app',
 });

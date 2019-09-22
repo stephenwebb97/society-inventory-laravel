@@ -16,6 +16,7 @@ class CreateBoardGamesTable extends Migration
         Schema::create('board_games', function (Blueprint $table) {
             $table->integer('id');
             $table->string('board_game_type')->nullable();
+            $table->string('year_published')->nullable();
             $table->string('rating')->nullable();
             $table->json('alternate_names')->nullable();
             $table->boolean('is_expansion')->nullable();

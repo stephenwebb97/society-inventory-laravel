@@ -9,4 +9,5 @@ class BoardGameProvider extends Model
     protected $table = "board_game_providers";
     protected $keyType="string";
     public $incrementing = false;
+    public $timestamps = false;
 }

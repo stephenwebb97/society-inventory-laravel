@@ -17,7 +17,6 @@ class CreateBoardGameProvidersTable extends Migration
             $table->string("id");
             $table->string("description")->nullable();
             $table->string("display_name");
-            $table->timestamp();
             $table->primary("id");
 
         });

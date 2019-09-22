@@ -27,53 +27,53 @@ class Asset implements AssetInter
     }
 
 
-    function set_id(string $id): void
+    function set_id(?string $id): void
     {
         $this->id = $id;
     }
 
-    function get_id(): int
+    function get_id(): ?string
     {
         return $this->id;
     }
 
-    function set_date_purchased(Carbon $date_purchased): void
+    function set_date_purchased(?Carbon $date_purchased): void
     {
         $this->date_purchased = $date_purchased;
     }
 
-    function get_date_purchased(): Carbon
+    function get_date_purchased(): ?Carbon
     {
         return $this->date_purchased;
     }
 
-    function set_name(string $name): void
+    function set_name(?string $name): void
     {
         $this->name = $name;
     }
 
-    function get_name(): string
+    function get_name(): ?string
     {
         return $this->name;
     }
 
-    function set_description(string $description): void
+    function set_description(?string $description): void
     {
         if (!is_null($description))
             $this->description = $description;
     }
 
-    function get_description(): string
+    function get_description(): ?string
     {
         return $this->description;
     }
 
-    function set_image(string $image): void
+    function set_image(?string $image): void
     {
         $this->image = $image;
     }
 
-    function get_image(): string
+    function get_image(): ?string
     {
         return $this->image;
     }

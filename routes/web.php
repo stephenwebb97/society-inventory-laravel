@@ -16,9 +16,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('wapi')->group(function (){
+Route::prefix('wapi')->middleware("auth:web")->group(function (){
     require __DIR__.'/wapi.php';
 });
+
+Route::middleware("auth:web")->group(function (){
+    Route::resources([
+        'boardgames' => 'BoardGamesController'
+    ]);
+});
+
 
 Auth::routes();
 
